@@ -8,7 +8,7 @@ on:
       base_file:
         description: '既存の.mdファイルパス'
         required: true
-        default: 'docs/base.md'
+        default: 'hyogo/outline/template.md'
 
 jobs:
   merge:
