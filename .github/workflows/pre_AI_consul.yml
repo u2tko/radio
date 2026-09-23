@@ -1,4 +1,4 @@
-name: Merge Issue into Markdown
+name: Merge Issue into Markdown(pre_AI_consul)
 on:
   workflow_dispatch:
     inputs:
