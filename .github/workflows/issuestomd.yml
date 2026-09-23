@@ -48,11 +48,9 @@ jobs:
 
             const merged = [
               baseContent,
-              '\n\n## Issue本文\n',
               issue.body || '',
-              '\n\n## コメント\n',
               commentBodies
-            ].join('\n');
+            ].join('\n\n');
 
             fs.writeFileSync(outputFile, merged);
 
