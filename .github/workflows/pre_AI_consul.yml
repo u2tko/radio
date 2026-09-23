@@ -1,0 +1,60 @@
+name: Merge Issue into Markdown
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue番号'
+        required: true
+      base_text:
+        description: '先頭に入れる文章（手動指定）'
+        required: false
+        default: '以下の内容を検討しています。「私の主張や感想」に論理の矛盾、飛躍、事実誤認などはないでしょうか。また、私が挙げた内容以外に、斎藤知事のポストに対して批判的な視点から考えを挙げてください。'
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate output filename
+        id: filename
+        run: echo "name=hyogo/outline/$(date +'%Y%m%d%H%M%S').md" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issueNumber = ${{ github.event.inputs.issue_number }};
+            const baseText = `${{ github.event.inputs.base_text }}`;
+            const outputFile = '${{ steps.filename.outputs.name }}';
+
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
+            const commentBodies = comments.map(c => c.body).join('\n\n---\n\n');
+
+            const merged = [
+              baseText,
+              issue.body || '',
+              commentBodies
+            ].join('\n\n');
+
+            fs.mkdirSync('hyogo/outline', { recursive: true });
+            fs.writeFileSync(outputFile, merged);
+
+      - name: Commit result
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add ${{ steps.filename.outputs.name }}
+          git commit -m "Merge issue #${{ github.event.inputs.issue_number }} into ${{ steps.filename.outputs.name }}"
+          git push
