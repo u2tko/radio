@@ -43,6 +43,7 @@ hyogo/kaiken/
 
 ## 横断分析レポート
 
+- [横断分析レポート索引・配信テーマ別活用ガイド](./analysis/README.md)
 - [2026年 知事発言キーワード・アピール軸の推移分析](./analysis/2026_rhetoric_shift.md)
 - [2026年 テーマ別・知事答弁の変遷と整合性検証リスト](./analysis/2026_contradictions_and_shifts.md)
 - [2026年 知事答弁の回避パターン分類・傾向分析](./analysis/2026_evasion_patterns.md)
