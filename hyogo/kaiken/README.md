@@ -15,7 +15,10 @@ hyogo/kaiken/
 │   ├── 2026-01-07.md          # 各回の議事録マークダウン（YYYY-MM-DD.md）
 │   └── 2026-05-26_hosei.md    # 同日に複数会見がある場合はサフィックスを付与
 ├── analysis/                  # 会見議事録の横断分析レポート（一次資料とは分離）
-│   └── 2026_rhetoric_shift.md # 2026年 前半・中盤・後半のキーワード／アピール軸推移分析
+│   ├── 2026_rhetoric_shift.md            # 2026年 前半・中盤・後半のキーワード／アピール軸推移分析
+│   ├── 2026_contradictions_and_shifts.md # 2026年 テーマ別・知事答弁の変遷と整合性検証リスト
+│   ├── 2026_evasion_patterns.md          # 2026年 知事答弁の回避パターン分類・傾向分析
+│   └── 2026_deadlock_scenes.md           # 2026年 質疑応答の膠着場面トップ5分析
 └── external/                  # 外部団体・第三者による書き起こし等の補助資料（公式一次資料と分離）
     └── seijou-ni-modosu-kai/  # 任意団体「兵庫県政を正常に戻す会」の書き起こしPDF・差分メモ
 ```
@@ -39,6 +42,9 @@ hyogo/kaiken/
 ## 横断分析レポート
 
 - [2026年 知事発言キーワード・アピール軸の推移分析](./analysis/2026_rhetoric_shift.md)
+- [2026年 テーマ別・知事答弁の変遷と整合性検証リスト](./analysis/2026_contradictions_and_shifts.md)
+- [2026年 知事答弁の回避パターン分類・傾向分析](./analysis/2026_evasion_patterns.md)
+- [2026年 質疑応答の膠着場面トップ5分析](./analysis/2026_deadlock_scenes.md)
 
 ## 外部書き起こし・補助資料
 
