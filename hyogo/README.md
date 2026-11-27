@@ -12,6 +12,7 @@
 | `2026-10/` | 2026年10月期の配信原稿（13本） | — |
 | `2026-11/` | 2026年11月期の配信原稿（28本） | — |
 | `outline/` | 初期設計・テンプレート資料（4本 ※現行標準は2026年11月完成形） | — |
+| `stock.md` | 手持ちネタ（候補）の管理正本。状態・芯・裏取り状況・見送り理由を保持 | — |
 
 ## AI・執筆時の主な参照先
 
@@ -25,3 +26,4 @@
    - 全体ルール（README同期）：[repo-readme-sync.md](../.agents/rules/repo-readme-sync.md)
    - 編集方針・最新フォーマット・検証規律：[hyogo-clean-radio.md](../.agents/rules/hyogo-clean-radio.md) / [hyogo-radio-core.md](../.agents/rules/hyogo-radio-core.md)
    - スキル：[hyogo-script-draft](../.agents/skills/hyogo-script-draft/SKILL.md) / [hyogo-archive-analysis](../.agents/skills/hyogo-archive-analysis/SKILL.md)
+   - ネタ候補の正本：[stock.md](./stock.md)（台本化前に「準備済み／見送り」を確認し、台本PRに状態更新を含める）
